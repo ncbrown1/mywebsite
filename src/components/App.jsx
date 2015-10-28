@@ -9,9 +9,16 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Navi />
+                <div className="header">
+                    <Navi />
+                </div>
                 <div className="container">
                     {this.props.children}
+                </div>
+                <div className="footer">
+                    <div className="container">
+                        <p><span className="glyphicon glyphicon-heart"></span> Nick</p>
+                    </div>
                 </div>
             </div>
         );

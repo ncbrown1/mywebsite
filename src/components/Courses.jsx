@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { ButtonGroup, Button, Accordion, Panel } from 'react-bootstrap';
+import { ButtonGroup, Button, Panel, PanelGroup } from 'react-bootstrap';
 let data = require('json!./courselist.json');
 
 class Group extends React.Component {
@@ -12,7 +12,7 @@ class Group extends React.Component {
         let name = this.props.name;
         if (by == 'Course Level') {
             return (
-                <Panel header={name} eventKey={key}>
+                <Panel collapsible defaultExpanded header={name} eventKey={key}>
                     <ul>
                         {items.map(function(object,i) {
                             let num = parseInt(object['CourseNumber']);
@@ -41,7 +41,7 @@ class Group extends React.Component {
             );
         } else {
             return (
-                <Panel header={name} eventKey={key}>
+                <Panel collapsible defaultExpanded header={name} eventKey={key}>
                     <ul>
                         {items.map(function(object,i) {
                             if (object[by] == name) {
@@ -102,12 +102,12 @@ export default class Courses extends React.Component {
             <div>
                 <p>Organizing By: {by}</p>
                 <ButtonGroup>
-                    <Button bsStyle="primary" onClick={this.reorganize.bind(this,'Course Level')} active={this.getClass.bind(this,'Course Level')}>Course Level</Button>
-                    <Button bsStyle="primary" onClick={this.reorganize.bind(this,'Department')} active={this.getClass.bind(this,'Department')}>Department</Button>
-                    <Button bsStyle="primary" onClick={this.reorganize.bind(this,'Quarter')} active={this.getClass.bind(this,'Quarter')}>Quarter</Button>
+                    <Button bsStyle="primary" onClick={this.reorganize.bind(this,'Course Level')} >Course Level</Button>
+                    <Button bsStyle="primary" onClick={this.reorganize.bind(this,'Department')} >Department</Button>
+                    <Button bsStyle="primary" onClick={this.reorganize.bind(this,'Quarter')} >Quarter</Button>
                 </ButtonGroup>
                 <hr />
-                <Accordion>
+                <PanelGroup accordion>
                     {this.state.groups.map(function(object, i) {
                         var name = object[by];
                         if (by == 'Course Level') {
@@ -115,7 +115,7 @@ export default class Courses extends React.Component {
                         }
                         return <Group by={by} name={name} key={i} />;
                     })}
-                </Accordion>
+                </PanelGroup>
             </div>
         );
     }
