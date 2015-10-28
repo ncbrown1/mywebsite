@@ -1,0 +1,16 @@
+{
+    "courses": [
+            {
+                "Department"   : "CS",
+                "CourseNumber" : "16",
+                "Quarter"      : "Fall 2013",
+                "Title"        : "Problem Solving with Computers I"
+            },
+            {
+                "Department"   : "MATH",
+                "CourseNumber" : "4B",
+                "Quarter"      : "Spring 2014",
+                "Title"        : "Principal Micro-Economics"
+            }
+        ]
+}

@@ -10,14 +10,9 @@ export default class App extends React.Component {
         return (
             <div>
                 <Navi />
-                <h1>Hello from the app!</h1>
-                <Name name="Nick" />
-                <ul>
-                    <li><Link to="home">Home</Link></li>
-                    <li><Link to="courses">Courses</Link></li>
-                    <li><Link to="hello">Hello</Link></li>
-                </ul>
-                {this.props.children}
+                <div className="container">
+                    {this.props.children}
+                </div>
             </div>
         );
     }

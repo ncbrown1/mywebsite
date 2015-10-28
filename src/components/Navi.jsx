@@ -7,7 +7,7 @@ import { Navbar, NavBrand, Nav, NavItem } from 'react-bootstrap';
 export default class Navi extends React.Component {
     render() {
         return (
-            <Navbar>
+            <Navbar inverse>
                 <NavBrand><Link to="home">Nick Brown</Link></NavBrand>
                 <Nav>
                     <NavItem eventKey={1} href="#/home">
