@@ -8,9 +8,9 @@ export default class Navi extends React.Component {
     render() {
         return (
             <Navbar inverse>
-                <NavBrand><Link to="home">Nick Brown</Link></NavBrand>
+                <NavBrand><Link to="/">Nick Brown</Link></NavBrand>
                 <Nav>
-                    <NavItem eventKey={1} href="#/home">
+                    <NavItem eventKey={1} href="#/">
                         Home
                     </NavItem>
                     <NavItem eventKey={2} href="#/courses">

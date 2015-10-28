@@ -8,7 +8,7 @@ var imgStyle = {
     margin: '0 1em 0 0'
 }
 
-export default class Main extends React.Component {
+export default class Home extends React.Component {
     render() {
         return (
             <div>
